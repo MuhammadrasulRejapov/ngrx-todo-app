@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CounterComponent } from './counter/counter.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [CounterComponent, TodoListComponent],
+  template: `
+    <h1>NgRx with Angular</h1>
+    <app-counter></app-counter>
+    <app-todo-list></app-todo-list>
+  `,
 })
-export class AppComponent {
-  title = 'my-ngrx-app';
-}
+export class AppComponent {}
